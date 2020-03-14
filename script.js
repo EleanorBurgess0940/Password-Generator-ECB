@@ -17,7 +17,6 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var special = ["!", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+", "[", "]", "{", "}", ",", ";", "#", ":", "@", "~", ".", "/", "<", ">", "?"]
 
-var minimumCount = 0
 
 var passwordLength = prompt("How many characters do you want your password to be?")
 if (passwordLength < 8 || passwordLength > 128) {
@@ -31,8 +30,19 @@ else {
 var passUppercase = confirm("Would you like to include uppercase characters?");
 if (passUppercase === true) {
   alert("The password will include Uppercase letters");
-  minimumCount++;
-}
-else {
 }
 
+var passLowercase = confirm("Would you like to include lowercase characters?");
+if (passLowercase === true) {
+  alert("The password will include Lowercase letters");
+
+  var passNumeric = confirm("Would you like to include numeric characters?");
+  if (passNumeric === true) {
+    alert("The password will include Numeric characters");
+  }
+
+  var passSpecial = confirm("Would you like to include special characters?");
+  if (passSpecial === true) {
+    alert("The password will include Special characters");
+  }
+}
