@@ -41,6 +41,12 @@ function generatePassword() {
     charSet = charSet + special
     alert("The password will include Special characters");
   }
+
+  if (passSpecial === false && passNumeric === false && passLowercase === false && passUppercase === false) {
+    alert("You must select one of the character sets!")
+  }
+
+
   for (var i = 0; i < passwordLength; i++) {
     var password = password + charSet[Math.floor(Math.random() * charSet.length)];
   }
