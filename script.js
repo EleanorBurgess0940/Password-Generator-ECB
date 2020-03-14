@@ -21,22 +21,28 @@ function generatePassword() {
 
   var passUppercase = confirm("Would you like to include uppercase characters?");
   if (passUppercase === true) {
-    charSet = charSet + uppercase;
+    charSet = charSet + uppercase
     alert("The password will include Uppercase letters");
   }
 
   var passLowercase = confirm("Would you like to include lowercase characters?");
   if (passLowercase === true) {
+    charSet = charSet + lowercase
     alert("The password will include Lowercase letters");
 
     var passNumeric = confirm("Would you like to include numeric characters?");
     if (passNumeric === true) {
+      charSet = charSet + numeric
       alert("The password will include Numeric characters");
     }
 
     var passSpecial = confirm("Would you like to include special characters?");
     if (passSpecial === true) {
+      charSet = charSet + special
       alert("The password will include Special characters");
+    }
+    for (var i = 0; i < passwordLength; i++) {
+      var password = password + charSet[Math.floor(Math.random() * charSet.length)];
     }
   }
 }// Write password to the #password input\
