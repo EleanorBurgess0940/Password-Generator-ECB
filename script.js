@@ -4,10 +4,10 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   var password = "";
   var charSet = "";
-  var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  var special = ["!", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+", "[", "]", "{", "}", ",", ";", "#", ":", "@", "~", ".", "/", "<", ">", "?"];
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowercase = "abcdefghijklmnopqrstuvwxyz";
+  var numeric = "0123456789";
+  var special = "!$%^&*()-=+[]{},;#:@~./<>?";
 
 
   var passwordLength = prompt("How many characters do you want your password to be?")
@@ -29,29 +29,28 @@ function generatePassword() {
   if (passLowercase === true) {
     charSet = charSet + lowercase
     alert("The password will include Lowercase letters");
-
-    var passNumeric = confirm("Would you like to include numeric characters?");
-    if (passNumeric === true) {
-      charSet = charSet + numeric
-      alert("The password will include Numeric characters");
-    }
-
-    var passSpecial = confirm("Would you like to include special characters?");
-    if (passSpecial === true) {
-      charSet = charSet + special
-      alert("The password will include Special characters");
-    }
-    for (var i = 0; i < passwordLength; i++) {
-      var password = password + charSet[Math.floor(Math.random() * charSet.length)];
-    }
   }
-}// Write password to the #password input\
-function writePassword() {
-  var pass = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passNumeric = confirm("Would you like to include numeric characters?");
+  if (passNumeric === true) {
+    charSet = charSet + numeric
+    alert("The password will include Numeric characters");
+  }
 
-  passwordText.value = password
-
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+  var passSpecial = confirm("Would you like to include special characters?");
+  if (passSpecial === true) {
+    charSet = charSet + special
+    alert("The password will include Special characters");
+  }
+  for (var i = 0; i < passwordLength; i++) {
+    var password = password + charSet[Math.floor(Math.random() * charSet.length)];
+  }
+  return password;
 }
+// Write password to the #password input\
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password
+}
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
