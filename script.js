@@ -12,12 +12,13 @@ function generatePassword() {
 
   //Prompt for the user to select how many characters to use in the password
   var passwordLength = prompt("How many characters do you want your password to be?")
+  parseInt(passwordLength, 10)
   if (passwordLength < 8 || passwordLength > 128) {
-    alert("password length should be between 8 - 128, try again");
-    prompt("How many characters do you want your password to be?");
+    alert("Please enter a whole number between 8-128");
+    return;
   }
   else {
-    alert("you have chosen a password length of " + passwordLength);
+    alert("You have selected a password length of " + passwordLength)
   }
   //Prompts to include character sets 
   var passUppercase = confirm("Would you like to include uppercase characters?");
@@ -44,7 +45,8 @@ function generatePassword() {
   }
 
   if (passSpecial === false && passNumeric === false && passLowercase === false && passUppercase === false) {
-    alert("You must select one of the character sets!")
+    alert("You must select one of the character sets!");
+    return;
   }
 
   //for loop to create the actual password
