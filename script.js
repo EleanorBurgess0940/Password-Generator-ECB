@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Created variables for multiple character sets that will lead to the password
 function generatePassword() {
   var password = "";
   var charSet = "";
@@ -9,7 +10,7 @@ function generatePassword() {
   var numeric = "0123456789";
   var special = "!$%^&*()-=+[]{},;#:@~./<>?";
 
-
+  //Prompt for the user to select how many characters to use in the password
   var passwordLength = prompt("How many characters do you want your password to be?")
   if (passwordLength < 8 || passwordLength > 128) {
     alert("password length should be between 8 - 128, try again");
@@ -18,7 +19,7 @@ function generatePassword() {
   else {
     alert("you have chosen a password length of " + passwordLength);
   }
-
+  //Prompts to include character sets 
   var passUppercase = confirm("Would you like to include uppercase characters?");
   if (passUppercase === true) {
     charSet = charSet + uppercase
@@ -46,7 +47,7 @@ function generatePassword() {
     alert("You must select one of the character sets!")
   }
 
-
+  //for loop to create the actual password
   for (var i = 0; i < passwordLength; i++) {
     var password = password + charSet[Math.floor(Math.random() * charSet.length)];
   }
