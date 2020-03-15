@@ -19,3 +19,6 @@ The final thing i did was create a "for loop" that would take the character sets
 I did have some problems with the logistics of this project. I tried to take it step by step and i kept going a little to far with one step and it would stop working. 
 
 #Link
+https://eleanorburgess0940.github.io/Password-Generator-ECB/
+
+![Project](2020-03-14(1).png)
