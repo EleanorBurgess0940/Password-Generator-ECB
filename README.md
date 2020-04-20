@@ -21,3 +21,6 @@ I did have some problems with the logistics of this project. I tried to take it 
 # Link
 https://eleanorburgess0940.github.io/Password-Generator-ECB/
 
+# Picture
+
+![screenshot](screenshot.PNG)
